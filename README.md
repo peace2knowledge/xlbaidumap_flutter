@@ -1,8 +1,6 @@
 # xlbaidumap_flutter
 
-A new Flutter project.
+这是一个在flutter项目中添加百度地图的实验项目
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+地图代码参考
+https://github.com/Yuanarcheannovice/BaiduMapDemo
