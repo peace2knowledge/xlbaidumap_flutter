@@ -1,0 +1,15 @@
+<resources>
+  <dimen name="edge_margin">16dp</dimen>
+  <dimen name="fab_elevation_resting">6dp</dimen>
+  <dimen name="fab_elevation_pressed">12dp</dimen>
+  <dimen name="font_size">17sp</dimen>
+  <dimen name="platform_label_font_size">30sp</dimen>
+
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <dimen name="custom_profile_image">50dp</dimen>
+  <dimen name="custom_profile_padding">2dp</dimen>
+  <dimen name="fab_margin">16dp</dimen>
+  <dimen name="toolbar_minHeight">45dp</dimen>
+
+</resources>

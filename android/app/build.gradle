@@ -1,0 +1,98 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    compileSdkVersion 27
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    signingConfigs {
+        debugConfig {
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            storeFile file("../debug.keystore")
+            storePassword "android"
+        }
+/*        releaseConfig {
+            keyAlias "demodemo"
+            keyPassword "demodemo"
+            storeFile file("G:/AndroidStudioWorkSpace/Test/demo.keystore")
+            storePassword "demodemo"
+        }*/
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.xlbaidumapflutter"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // 后来添加的
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+// 后来添加的
+    sourceSets{
+        main{
+            jniLibs.srcDir 'libs'
+        }
+    }
+
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    compile "com.android.support:appcompat-v7:27.0.2"
+    compile "com.android.support:design:27.0.2"
+    compile "com.android.support:recyclerview-v7:27.0.2"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //
+    //刷新加载(https://github.com/scwang90/SmartRefreshLayout)
+    compile('com.scwang.smartrefresh:SmartRefreshLayout:1.0.3-alpha-5') {
+        exclude group: 'com.android.support'
+    }
+
+    compile('com.github.Yuanarcheannovice:XBaseAdapter:1.2') {
+        exclude group: 'com.android.support'
+    }
+
+    compile ('com.github.Yuanarcheannovice:XCoderAppLib:1.0.1') {
+        exclude group: 'com.android.support'
+    }
+}
