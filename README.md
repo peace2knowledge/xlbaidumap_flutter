@@ -6,3 +6,7 @@ A new Flutter project.
 
 For help getting started with Flutter, view our online
 [documentation](http://flutter.io/).
+
+地图代码参考
+
+https://github.com/Yuanarcheannovice/BaiduMapDemo
