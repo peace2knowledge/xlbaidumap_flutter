@@ -21,20 +21,20 @@ android {
         disable 'InvalidPackage'
     }
 
-    signingConfigs {
+   /*signingConfigs {
         debugConfig {
             keyAlias "androiddebugkey"
             keyPassword "android"
-            storeFile file("../debug.keystore")
+            storeFile file("..\\debug.keystore")
             storePassword "android"
         }
-/*        releaseConfig {
+      releaseConfig {
             keyAlias "demodemo"
             keyPassword "demodemo"
             storeFile file("G:/AndroidStudioWorkSpace/Test/demo.keystore")
             storePassword "demodemo"
-        }*/
-    }
+        }
+    }*/
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
