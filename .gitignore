@@ -6,9 +6,7 @@
 .pub/
 build/
 ios/.generated/
-packages
 *.iml
-pubspec.lock
 .flutter-plugins
 .packages
 .metadata
