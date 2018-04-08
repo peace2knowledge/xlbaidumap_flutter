@@ -15,11 +15,11 @@ class PlatformView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Platform View',
+      title: 'flutter 百度地图集成',
       theme: new ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(title: 'Platform View'),
+      home: const MyHomePage(title: 'flutter 百度地图集成'),
     );
   }
 }
@@ -66,16 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text(
-                  'Button tapped $_counter time${ _counter == 1 ? '' : 's' }.',
-                  style: const TextStyle(fontSize: 17.0),
-                ),
                 new Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: new RaisedButton(
                       child: Platform.isIOS
-                          ? const Text('Continue in iOS view')
-                          : const Text('Continue in Android view'),
+                          ? const Text('打开地图')
+                          : const Text('打开地图'),
                       onPressed: _launchPlatformCount),
                 ),
               ],
@@ -96,11 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ],
-    ),
-    floatingActionButton: new FloatingActionButton(
-      onPressed: _incrementCounter,
-      tooltip: 'Increment',
-      child: const Icon(Icons.add),
     ),
   );
 }
